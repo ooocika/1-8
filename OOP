@@ -1,0 +1,1706 @@
+public class Counter {
+  private int value;
+
+  public void inc();
+
+  ++value;
+
+}
+
+  public int getValue() {
+    return value;
+  }
+}
+
+//
+public class Foo {
+  private int x;
+  private float f = 0.0;
+  private String name = "Anonymous";
+
+}
+
+//
+public class Counter {
+  public static final int MAX = 100;
+  private int value;
+
+  public void inc() {
+    if (value < MAX) {
+      ++value;
+    }
+  }
+
+  public int getValue() {
+    return value;
+  }
+}
+
+//
+public class Counter {
+  public static final int MAX = 100;
+  private int value;
+
+  public void inc() {
+    if (value < MAX) {
+      ++value;
+    }
+  }
+
+  public int getValue() {
+    return value;
+  }}
+
+  Counter c = new Counter();c.inc();
+  int i = c.getValue();
+
+  //
+  public class Date {
+    private int year, month, day;
+
+    public Date(int y, int m, int d) {
+      if (verify(y, m, d)) {
+        year = y;
+        month = m;
+        day = d;
+      }
+    }
+
+    private boolean verify(int y, int m, int d) {
+    }
+  }
+  //
+
+  public class MyDate {
+    private int day = 26;
+    private int month = 9;
+    private int year = 2016;
+
+    public MyDate(int day, int month, int year) {
+
+    }
+  }
+
+  MyDate date1 = new MyDate(20, 6, 2000);
+
+  //
+  public class PassTest {
+    public void changePrimitive(int value) {
+      ++value;
+    }
+
+    public void changeReference(MyDate from, MyDate to) {
+      from = to;
+    }
+
+    public void changeObject(MyDate from, int day) {
+      date.setDay(day);
+    }
+  }
+
+  //
+  PassTest pt = new PassTest();
+  int x = 100;pt.changePrimitve(x);System.out.println(x);
+
+  MyDate oneDate = new MyDate(3, 10, 2016);
+  MyDate anotherDate = new MyDate(3, 10, 2001);
+
+  pt.changeReference(oneDate,anotherDate);System.out.println(oneDate.getDay());
+
+  pt.changeObject(oneDate,12);System.out.println(oneDate.getDay());
+
+  //
+
+  public class MyDate {
+
+    private int year = 26;
+    private in month = 9;
+    private int year = 2016;
+
+    public MyDate(int day, int month, int year) {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+    }
+
+    public MyDate(MyDate date) {
+      this.day = date.day;
+      this.month = date.month;
+      this.year = date.year;
+    }
+
+    public MyDate creteNextDate(int moreDays) {
+      MyDate newDate = new MyDate(this);
+      return newDate;
+    }
+  }
+
+  //
+  public class ScopeExample {
+    private int i = 1;
+
+    public void firstMethod() {
+      int i = 4, j = 5;
+
+      this.i = i + j;
+      secondMethod(7);
+    }
+
+    public void secondMethod(int i) {
+      int j = 8;
+      this.i = i + j;
+    }
+  }
+
+  public class TestScoping {
+    public static void main(String[] args) {
+      ScopeExample scope = new ScopeExample();
+
+      scope.firstMethod();
+    }
+  }
+
+  //
+  int[] t;
+
+  t=new int[10];
+
+  for(
+  int v:t)
+  {
+    System.out.println(v);
+  }
+
+  //
+  int[] t;
+
+  t=new int[10];
+
+  //
+  Point[] t;
+
+  t=new Point[3];
+
+  for(
+  int i = 0;i<3;++i){
+  p[i] = new Point(i, i);
+}
+
+  //
+  void printElements(int t[]) {
+    for (int i = 0; i < t.length; ++i) {
+      System.out.println(t[i]);
+    }
+
+  }
+
+  // Module 3 Static Members
+
+  public class Product {
+    private int sNumber;
+    public static int counter = 0;
+
+    public Product() {
+      counter++;
+      sNumber = counter;
+    }
+
+  }
+
+  //
+  public class Product {
+    private in sNumber;
+
+    private static int counter = 0;
+
+    public static int getCounter() {
+      return counter;
+
+    }
+
+    public Product() {
+      counter++;
+      sNumber = counter;
+    }
+  }
+
+  //
+  public class InstanceCounter {
+    private static int counter;
+
+    public InstanceCounter() {
+      ++counter;
+    }
+
+    public static int getCounter() {
+      return counter;
+    }
+
+  }
+
+  //
+  public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {
+
+    }
+
+    public static Singleton getInstance() {
+      if (instance == null) {
+        instance = new Singleton();
+      }
+      return instance;
+    }
+  }
+
+  //
+  public class AClass {
+    private static int counter;
+
+    static {
+
+    }
+  }
+
+  ///
+  public class Employee {
+    private final long ID;
+
+    public Employee() {
+      ID = createID();
+    }
+
+    private lond createID() {
+    }
+
+  }
+
+  //
+public enum GestureType{
+  Up,
+  RIGHT,
+  DOWN,
+  LEFT
+}
+
+  for(
+
+  GestureType type:GestureType.values())
+  {
+    System.out.println(type);
+  }
+
+  OUTPUT:
+UP
+RIGHT
+DOWN
+LEFT
+
+  //
+  public enum GestureType {
+    UP(0, "fel")
+    RIGHT(1, "jobb");DOWN(2,"le");LEFT(3,"bal");
+
+GestureType(int value, String name){
+  this.value = value;
+  this.name = name;
+  
+  }
+
+public int getValue(){
+  return value;
+
+}
+
+public String getName(){
+  return name;
+  
+  }
+
+    private int value;
+    private String name;
+  }
+  //
+  for(
+
+  GestureType type:GestureType.values())
+  {
+    System.out.println(type.name() + ", " +
+        type.getName() + ", " + type.getValue());
+  }
+
+  //
+  final public class Product {
+    private final int ID;
+  }
+
+  //
+  static public class Product {
+    private final int ID;
+
+    private static counter;
+    public Product();ID=++counter;
+  }
+
+}
+
+//
+public class Product {
+  private final int ID;
+  private static int counter;
+  private static final String name = "Product";
+
+  public Product() {
+    ID = ++counter;
+
+  }
+
+  public String getIDStr() {
+    return name + ID;
+  }
+}
+
+//
+public class Person {
+  private String name;
+  private Date birthDate;
+
+  public Person(String name, Date birthDate) {
+    this.name = name;
+    this.birthDate = birthDate;
+  }
+}
+
+//
+public class Course {
+  private final lonf ID;
+  privatre String name;
+
+  public static final int MAX_STUDENTS = 100;
+
+  private Student[] enrolledStudents;
+  private int numStudents;
+
+  public Course(long ID, String name) {
+    this.ID = ID;
+    this.name = name;
+    enrolledStudents = new Student[MAX_STUDENTS];
+  }
+
+  public void enrollStudent(Student student) {
+    enrolledStudents[numStudents] = student;
+    ++numStudents;
+  }
+}
+
+//
+public class Employee {
+  protected String name;
+  protected Date birthDate;
+  protected double salary;
+
+  public Employee() {
+
+  }
+
+  public String toString() {
+
+  }
+}
+
+//
+public class Manager extends Employee {
+  private String department;
+
+  public Manager() {
+
+  }
+
+  public String toString() {
+  }
+
+}
+
+//
+
+public class Manager extends Employee {
+  private String department;
+
+  public Manager(String name, double salary, Date birthDate, String department) {
+
+    super(name, salary, birthDate);
+    this.department = department;
+  }
+}
+
+//
+public class Employee{
+  protected String name;
+  protected Date birthDate;
+  protected double salary;
+  public Employee( ){
+
+    
+}
+  public String toString(){
+    
+  }
+}return"Name: "+name+" Salary: "+salary+" B. Date: "+birthDate;}}
+
+public class Manager extends Employee {
+  private String department;
+
+  public Manager() {
+
+  }
+
+  @Override
+  public String toString() {
+    return "Name: " + name + " Salary: " + salary + " B. Date: " + birthDate + "department:" + department;
+  }
+}
+
+//
+public class Employee {
+  protected String name;
+  protected Date birthDate;
+  protected double salary;
+
+  public Employee() {
+  }
+
+  public String toString() {
+    return "Name: " + name + " Salary: " + salary + " B. Date: " + birthDate;
+  }
+}
+
+//
+public class Manager extends Employee {
+  private String department;
+
+  public Manager() {
+  }
+
+  public String toString() {
+    return super.toString() + " Department: " + department;
+  }
+}
+
+//
+public class Parent {
+  public void foo() {
+
+  }
+
+  public class Child extends Parent {
+    private void foo() {
+    }
+  }
+
+  //
+  Employee e = new Employee();System.out.println(e.toString());
+
+  e=new Manager();System.out.println(e.toString());
+
+  //
+  public String createMessage(Employee e) {
+    return "Hello, " + e.getName();
+  }
+
+  Employee e1 = new Employee("Endre", 2000, new Date(20, 8, 1986));
+  Manager m1 = new Manager("Johann", 3000,
+      new Date(15, 9, 1990), "Sales");
+
+  System.out.println(createMessage(e1));
+System.out.println(createMessage(m1));
+//
+Employee emps[] = new Employee[100];
+emps[0] = new Employee();
+emps[1] = new Manager();
+emps[2] = new Employee();
+
+
+for(Employee e: emps){
+  System.out.println(e.toString());
+}
+
+int counter = 0;
+for(Employee e:emps){
+  if(e instanceof Manager){
+    ++counter;
+  }
+  
+}
+//
+
+public class Employee{
+  protected String name;
+  protected Date birthDate;
+  protected double salary;
+  public Employee(String name, double salary, Date birthDate){
+    this.name = name;
+    this.salary = salary;
+    this.birthDate = birthDate;
+  }
+  public Employee(String name, double salary){
+    this(name, salary, null);
+  }
+  public Employee(String name, Date birthDate){
+    this(name, 1000, birthDate);
+  }
+}
+//
+public class MyDate{
+  private int day;
+  private int month;
+  private int year;
+
+  public boolean equals(Object o){
+    boolean result = false;
+    if(()0 != null) && (o instanceof MyDate)){
+      MyDate d = (MyDate)o;
+      if((day == d.day) && 
+        (month == d.month) &&
+        (year == d.year)){
+        result = true;
+  }
+}
+
+    return result;
+  }
+}
+//
+private class MyDate{
+  private int day;
+  private int month;
+  private int year;
+
+  @override
+  public boolean equals(Object o){
+    if(this == o) return true;
+    if(o == null ||this.getClass() != o.getClass()) return false;
+    MyDate myDate = (MyDate)o;
+    return day == myDate.day && month == myDate.month && year == myDate.year;
+  }
+}
+//
+int i = 420;
+Integer anInt = i;
+//Module 6 Interfaces and Abstract Classes
+
+public interface Driveable{
+  public void start();
+  public void forward();
+  public void turn(double angle);
+  public void stop();
+}
+
+  //
+  public class Bicyle implements Driveable {
+    @Override
+    public void start() {
+      System.out.println("The bicycle has been started");
+    }
+
+    @Override
+    public void forward() {
+      System.out.println("The bicycle moving forward");
+    }
+
+    @Override
+    public void turn(double angle) {
+      System.out.println("The bicycle turning by " + angle + " clockwise");
+    }
+
+    @Override
+    public void stop() {
+      System.out.println("The bicycle has been stopped");
+    }
+  }
+
+  //
+  List<String> l1 = new ArrayList<>();l1.add("welcome");l1.add("to");l1.add("java");
+
+Iterator<String> it = l1.iterator();while(it.hasNext())
+  {
+    System.out.println(it.next() + " ");
+  }for(
+  String str:l1)
+  {
+    System.out.print(str + " ");
+  }
+  //
+  ]
+
+  public class Utils {
+  public static void moveMe(Driveable v){
+    v.start();
+    for(int i=0; i < 12; ++i){
+      v.turn(15);
+    }
+    v.stop()''
+  }
+  }
+
+  Utils.moveMe(new Bicycle());Utils.moveMe(new Car());
+
+  //
+  public class Utils {
+    public static void println(List<String> list) {
+      for (String s : list) {
+        System.out.println(s);
+      }
+    }
+}
+
+List<String> l1 = new ArrayList<>();Utils.printlt(l1);
+List<String> l2 = new LinkedList<>();Utils.printlt(12);
+// Interfaces Java 8 150P
+
+public interface Animal{
+  void eat();
+
+  default void log(String str){
+    System.out.println("Animal log: " +str);
+  }
+}
+//
+public class Bear implements Animal{
+  void eat(){
+    System.out.println("Bear eats");
+  }
+}
+//
+public interface MatrixOperations{
+
+  static Matrix add(Matrix a, Matrix b){
+}
+}
+  //
+
+public abstract class Shape{
+  protected double area;
+  public abstract void draw();
+}
+
+public class Square extends Shape{
+  private double size;
+
+  public Square(double size){
+    this.size = size;
+    this.area = size * size;
+    
+  
+  }
+
+  @Override
+  public void draw(){
+System.out.println("I am a square");
+  
+  }
+
+}
+//
+
+interface Comparable{
+  int compareTo(Object o);
+}
+x.compareTo(y):
+0: x equal to y
+  positive: x > y;
+negative: x < y;
+
+//
+interface Comparable<T>{
+  int compareTo(T o);
+}
+//
+
+public class Point implements Comparable<Point>{
+
+  @Override
+  public int compareTo(Point o){
+    if(o == null) throw new NullPointerException();
+    if(this.x == o.x && this.y == o.y){
+      return 0;
+    }
+    if(this.x == o.x){
+      return Integer.compare(this.y, o.y);
+      
+    }
+    return Integer.compare(this.x, o.x);
+  }
+}
+//
+
+class DistanceComparator implements Comparator<Point>{
+
+  private final static Point origo = new Point(0, 0);
+
+  @Override
+  public int compare(Point p1, Point p2){
+    return Double.compare(
+      p1.distance(origo), 
+      p2.distance(origo));
+  }
+}
+
+ArrayList<Point> Points = new ArrayList<Point>();
+points.add(new Point(1, 2));
+points.add(new Point(2, 2));
+point.add(new Point(1, 3));
+
+
+Collections.sort(points, new DistanceComparator));
+
+for(Point point: points){
+  System.out.println(point);
+}
+//
+
+Anonymous inner class
+
+
+  private final Point origo = new Point(0,0);
+@Override
+  public int compareTo(Point p1, Point p2){
+  return Double.compare(
+    p1.distance(origo),
+    p2.distance(origo));
+}}
+);
+
+//
+Lambda
+  (Point p1, Point p2) ->
+{
+  final Point origo = new Point(0,0);
+  return Double.compare(p1.distanceTo(origo),
+                       p2.distanceTo(origo));
+}
+//Module 7
+Exceptions
+public class AddArguments{
+  public static void main(String[] args){
+    int sum = 0;
+    for(String arg: args){
+      sum += Integer.parseInt(arg);
+      
+}
+    System.out.println("Sum: "sum);
+  }
+}
+//
+
+public class AddArguments2{
+  public static void main(String[] args){
+    try{
+      int sum = 0;
+      for(String arg: args){
+        sum += Integer.parseInt(arg);
+        
+    }
+      System.out.println("Sum: " + sum);
+    }catch(NumberFormatException e){
+      System.err.println("Non-numeric argument");
+    }
+  }
+
+}
+//
+public class AddArguments3{
+  public static void main(String[] args){
+    int sum = 0;
+    for(String arg: args){
+      try{
+        sum += Integer.parseInt(arg);
+        
+      }catch(NumberFormatException e){
+        System.err.println(arg+"is not an integer");
+      }
+    }
+    System.out.println("Sum: " + sum);
+  }
+}
+//
+
+try{
+  
+}catch(MyException1 e1){
+  
+}catch(MyException2 e2){
+
+}catch(Exception e3){
+  
+}finally{
+    
+}
+//
+
+try{
+  connectDB();
+  doTheWork();
+}catch(AnyException e){
+  logProblem(e);
+}finally{
+  disconnectDB();
+}
+
+//
+static String readFirstLineFromFile(String path){
+  try(BufferedReader br = 
+     new BufferedReader(new FileReader(path))){
+  return br.readLine();
+}catch(Exception e){
+
+}
+}
+//
+public static int countLines(String filename)
+throws FileNotFoundException{
+
+//{
+  //int counter = 0;
+try(Scanner scanner = new Scanner(new File(filename))){
+  while(scanner.hasNextLine()){
+    scanner.nextLine();
+    ++counter;
+}
+  }catch(FileNotFoundExeption e){
+  e.printStackTrace();
+}
+return counter;
+}
+//
+public class Stack{
+  private Object elements[];
+  private int capacity;
+  private int size;
+
+  public Stack(int capacity){
+    this.capacity = capacity;
+    elements = new Object[capacity];
+}
+
+  public void push(Object o)throw StackException{
+    if(size == capacity){
+      throw new StackException("Stack is full");
+    }
+    element[size++] = o;
+  }
+  public Object top() throws StackException{
+    if(size == 0){
+      throw new StackException("Stack is empty");
+    }
+    return elements[size - 1];
+  }
+}
+
+
+//
+stack s= new Stack(3);
+for(int i = 0 ; i < 10; ++i){
+  try{
+    s.push(i);
+  }catch(StackException ex)
+    {
+      ex.printStackTrace();
+    }
+}
+//Module 8
+//Nested Classes
+
+
+public class Slist{
+  private Element head;
+
+  public void insertFirst(Object value){
+    head = new Element(value, head);
+  }
+
+  private static class Element{
+    private Object value;
+    private Element next;
+    public Element(Object value, Element next){
+      this.value =value;
+      this.next = next;
+}
+    public Element(Object value){
+      this.value = value;
+      this.next = null;
+    }
+  }
+  
+    }
+
+//p
+
+public interface Iterator{
+  public boolean hasNext();
+  public Object next();
+
+  public void remove();
+}
+
+//
+slist list = new Slist();
+for(int i=0; i< 10; ++i){
+  list.insertFirst(i);
+}
+
+Iterator it = list.createIteartor();
+while(it.hasNext()){
+    System.out.println(it.next());
+}
+
+//
+public class Slist{
+  private Element head;
+
+  public Iterator createIterator(){
+    return new Iterator(){
+      private Element act = head;
+
+      public boolean hasNext(){
+        return act != null;
+      }
+
+      public Object next(){
+        Object value = act.value;
+        act = act.next;
+        return value;
+      }
+    };
+  }
+  //Threads
+
+  public class MyRunnable implements Runnable{
+    private int id;
+
+    public MyRunnable(int id){
+      this.id = id;
+    }
+    public void run(){
+      for(int i=0; i< 10; ++i){
+        System.out.println("Hello" + id + " " +i);
+    }
+    }
+
+  }
+  MyRunnable r1 = new MyRunnable(1);
+  Thread t = new Thread(r);
+
+  //
+
+  public class Test{
+    public static void main(String args[]){
+      Thread t1 = new Thread(new MyRunnable(1));
+      Thread t2 = new Thread(new MyRunnable(2));
+      t1.start();
+      t2.start();
+  }
+  }
+  //
+  class MyThread extends Thread{
+    private int id;
+
+    public MyThread(int id){
+      this.id = id;
+    }
+    @Override
+    public void run(){
+      for(int i =0; i < 10; ++i){
+        System.out.println("Hello" + id + " " + i);
+      }
+    }
+    
+      }
+
+  Thread t = new MyThread(1);
+  t.start();
+//
+public class Test{
+  public static void main(String[] args){
+    Thread t1 = new MyThread(1);
+    Thread t2 = new MyThread(2);
+    t1.start();
+    t2.start();
+
+    
+  }
+}
+
+  //
+  public class MyFitsrtRunnable implements Runnable{
+    @Override 
+    public void run(){
+      System.out.println("In a thread");
+    }
+  }
+
+  Usage:
+
+  Thread thread = new Thread(new MyFirstRunnable());
+  thread.start();
+System.out.println("In the main Thread");
+
+//
+
+for(int i =0; i< 25; i++){
+  new Thread(runnable).start();
+}
+//
+
+thread.run();
+
+//
+try{
+  Thread.sleep(1000);
+  
+}catch(InterruptedException e){
+  e.printStackTrace();
+}
+//
+
+Thread t2 = new Thread(new R());
+t2.start();
+
+try{
+  t2.join();
+}catch(InterruptedException e){
+  e.printStackTrace();
+}
+//
+
+public class ThreadPriorityRange{
+  public static void main(String[] args){
+    System.out.println("Minimal priority: " + 
+                      Thread.MIN_PRIORITY);
+    System.out.println("Maximal priority: " +
+                       Thread.MAX_PRIORITY);
+    System.out.println("Normal priority: " +
+                       Thread.NORM_PRIORITY);
+  }
+  
+}
+
+//
+private static class ForeverRunnable implements Runnable{
+  public void run(){
+    while(true){
+      System.our.println(Thread.currentThread().getName() + 
+                        ":" + System.currentTimeMillis());
+      try{
+        Thread.sleep(5000);
+        
+      }catch(InterruptedException e){
+        System.out.println(
+          Thread.currentThread().getName() + "has been interrupted"
+        );
+  }
+    }
+  }
+}
+
+//
+public static void main(String[] args){
+  Thread t2 = new Thread(new ForeverRunnable());
+  System.out.println("Current time millis : " + 
+                    System.currentTimeMillis());
+
+  t2.start();
+  t2.interrupt();
+}
+
+//
+publci class Counter{
+  private int value = 0;
+
+public int getNextValue(){
+  return value++;
+}
+}
+//
+class Counter{
+  private int value;
+
+  public int getNextValue(){
+    return  ++value;
+  }
+  public int getValue(){
+    return value;
+  }
+}
+//
+Runnable task = new Runnable(){
+  @Override
+  publci void run(){
+    for(int i=0; i< 10000; ++i){
+      counter.getNextValue();
+    }
+  }
+};
+//
+Counter counter = new Counter();
+Thread t1 = new Thread(task);
+Thread t2 = new Thread(task);
+t1.start();
+t2.start();
+try{
+  t1.join();
+  t2.join();
+  
+}catch(InterruptedException e){
+}
+System.out.println("COUNTER: " + counter.getValue());
+
+//
+public class Counter{
+  private int value = 0;
+  public synchronized int getNextValue(){
+    return value++;
+  }
+}
+//
+public class Counter{
+  private int value = 0;
+
+  public int getNextValue(){
+    synchronized(this){
+      value++;
+    }
+    return value;
+  }
+}
+
+//
+public class Counter{
+  private AtomicInteger value = new AtomicInteger(0);
+
+  public int getNextValue()}{
+    return value.increamentAndGet();
+  }
+public int getValue(){
+  return value.intValue();
+}
+}
+//
+int t = 10000;
+Counter counter = new Counter();
+
+ExecutorService executor = Executors.newFixedThreadPool(2);
+Runnable task = new Runnable(){
+  @Override
+  public void run(){
+    for(int i =0; i< n; ++i){
+      counter.getNextValue();
+    }
+  }
+  
+  };
+executor.execute(task);
+executor.execute(task);
+executor.shutdown();
+try{
+  executor.awaitTermination(Long. MAX_VALUE, TimeUnit.NANOSECONDS);
+}catch(InterruptedException e){
+  e.printStackTrace();
+}
+System.out.println("Counter: " + counter.getValue());
+//Module 10 GUI Programming Swing and JavaFx
+
+
+
+//
+public static void main(Stirng[] args)
+  {
+  JFrame f = new JFrame("The First Swing Application");
+  f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  f.setBounds(100, 100, 300, 300);
+  f.setVisible(true);
+  }
+//
+
+JFrame f = new JFrame("The First Swing Application");
+f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+JPanel p = new JPanel();
+p.setBackground(Color.blue);
+p.setLayout(null);
+JButton b = new JButton("Yes");
+b.setSize(100, 60);
+b.setLocation(200, 200);
+p.add(b);
+f.setContentPane(p);
+
+f.setBound(100, 100, 300, 300);
+f.setVisible(true);
+
+//
+public static JPanel createPanel(int n){
+  JPanel panel = new JPanel();
+panel.setLayout(new GridLayout(n, n));
+for(int i =0; i< n; ++i){
+  for(int j =0; j< n; ++j){
+    panel.add(new JButton("(" + i + ", " + j+")"));
+}
+}
+return panel;
+}
+//
+public class FrameAggregation{
+
+  private static void initFrame(){
+  JFrame frame = new JFrame("Frame Aggregation");
+    frame.add(new JButton("Ok"), "Center");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setBounds(100, 100, 200, 200);
+    frame.setVisible(true);
+  
+  }
+
+  public static void main(String[] args){
+    initFrame();
+  }
+  
+}
+//
+public class FrameInferitance extends JFrame{
+  private JButton button;
+  public FrameInferitance(){
+    initComponents();
+  }
+  private void initComponents(){
+    this.setTitle("FrameInheritance");
+    this.add(new JButton("Ok"), "Center");
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setBounds(100, 100, 200, 200);
+    this.setVisible(true);
+    
+  }
+  public static void main(String[] args){
+    new FrameInheritance();
+  }
+}
+//
+private static JMenuBar createMenuBar(){
+
+  MenuBar menuBar; JMenu filemenu, helpmenu;
+  JMenuItem menuItem;
+  menuBar = new JMenuBar();
+
+  filemenu = new JMenu("File"); menuBar.add(filemenu);
+  menuItem = new JMenuItem("New"); filemenu.add(menuItem);
+  menuItem = new JMenuItem("Exit"); filemenu.add(menuItem);
+
+  helpmenu = new JMenu("Help");
+  menuBar.add(helpmenu);
+  menuItem = new JMenuItem("About");
+  helpmenu.add(menuItem);
+  return menuBar;
+}
+
+frame.setJMenuBar(createMenu());
+
+//
+
+JOptionPane.showMessageDialog(Component parent, String message);
+
+//
+int result =
+  JOptionPane.showConfirmDialog(Component parent, String message);
+
+Result:
+YES_OPTION = (0) , NO_OPTION (1) , CANCEL_OPTION (2)
+  //
+  String value = 
+  JOptionPane.showInputDialog("Please input a value");
+
+//
+String option[] = {"Apple", "Grape", "Strawberry"};
+
+itn res = JOptionPane.showOptionDialog(form, "Choose an option",
+                                      "Option Dialog","JOptionPane.DEFAULT_OPTION",JOptionPane.WARNING_MESSAGE,null, options, options[0]);
+
+//
+JFileChooser chooser = new JFileChooser();
+int returnVal = chooser.showOpenDialog(parent);
+if(returnval == JFileChooser.APPROVE_OPTION){
+  System.out.println(
+    "you chose to open this file: "+
+    chooser.getSelectedFile().getName());
+}
+
+//
+JPanel pane = new JPanel();
+pane.setBorder(BorderFactory.createLineBorder(Color.black));
+
+//
+JButton button = new JButton("Press Me");
+button.putClientProperty("order", "10");
+
+button.getClientPropery("order");
+//
+
+JButton b= new JButton("yes");
+f.add(b);
+b.addActionListener(new ActionListener(){
+  @Override
+  public void actionPerformed(ActionEvent e){
+    if(b.getText(). equals("Yes")){
+      b.setText("No");
+      
+    }else{
+      b.setText("Yes");
+    }
+  }
+});
+   //
+JButton b = new JButton("Yes");
+f.add(b);
+
+b.addActionListener(e->
+                    {
+                      b.setText(b.getText().equals("No")?"Yes":"No");
+                    }
+                   );
+
+
+//
+
+public class MyFrame implement ActionListener{
+
+  public void initComponents(){
+    for(int i =0; i< n; ++i){
+      for(int j=0; j<n; ++j){
+        JButton b= new JButton("");
+        panel.add(b);
+        b.addActioListener(this);
+      }
+    
+  }
+}
+  @Override
+    public void actionPerformed(ActionEvent e){
+    JButton source = (JButton)e.getSource();
+  source.setBackground(Color.red);
+
+}}
+
+///
+public class DrawComponent extends JComponent{
+  private ArrayList<Point> points = new ArrayList<Point>();
+  private Color colot = Color.red;
+
+  public DrawComponent(){
+    this.addMouseListener(new MouseAdapter(){
+      @Override
+      public void mousePressed(MouseEvent e){
+        points.clear();
+        points.add(new Point (e.getX(), e.getY()));
+  }
+});
+
+    this.addMouseMotionListener(new MouseMotionAdapter(){
+      @Override
+      public void mouseDragged(MouseEvent e){
+        points.add(new Point(e.getX(), e.getY()));
+        DrawComponent.this.repaint();
+      }
+      
+      });
+  }
+}
+//
+
+public class DrawComponent extends JComponent{
+  @Override
+  public void paint(Graphics g){
+    g.setColor(Color);
+    if(points!=null && points.size( ) > 0){
+      Point startPoint = points.get(0);
+      for(int i =1; i<points.size(); ++i){
+        Point endPoint = points.get(i);
+        g.drawLine(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
+        startPoint = endPoint;
+    }
+  }
+  }
+  public void clear(){
+    point.clear();
+  repaint();
+    
+  }
+  
+  }
+
+//271
+public class MyClass extends JFrame{
+
+  someObject.addMouseListener(
+    new MouseAdapter(){
+      public void mouseClicked(MouseEvent e){
+        
+      }
+});
+}
+
+//GUI Programming JavaFX
+
+
+public clas Main extends Application{
+
+  @Override 
+    public void start(Stage primaryStage){ throw Exception{
+    Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+  primaryStage.setTitle("Fist App");
+    primaryStage.setScene(new Scene(root, 300, 275));
+  }  
+  public static void main(String[] args){
+    launch(args);
+  }
+}
+
+//
+@Override
+  public void start(Stage primaryStage)throws Exception{
+  Parent root =
+    FXMLLoader.load(getClass().getResource("sample.fxml"));
+  primaryStage.setTitle("Hello World");
+  PrimaryStage.setScene(new Scene(root, 300 ,275));
+
+  primaryStage.show();
+  }
+//
+public class Controller{
+  public void refresh(ActionEvent e){
+    Button button = (Button)e.getSource();
+  }
+  
+}
+
+//
+public class Controller{
+  private PrintStream out = new PrintStream("mouse.csv");
+
+  public void handleMouseMoved(MouseEvent mouseEvent){
+    out.println("MouseMove," + 
+               mouseEvent.getX() + "," +mouseEvent.getY());
+  }
+  }
+
+//
+public GridPane createGridPane(){
+}
+
+public void start(Stage primaryStage) throws Exception{
+  primaryStage.setTitle("Data App");
+  primaryStage.setScene(new Scene(createGridPane()));
+  primaryStage.show();
+}
+//
+public GridPane createGridPane(){
+  GridPane gridPane = new GridPane();
+
+  Button submitButton = new Button("Submit");
+
+  gridPane.add(submitButton, 0, 3);
+
+  submitButton.setOnAction(new EventHandler<ActionEvent>(){
+    @Override
+    public void handle(ActionEvent actionEvent){
+    
+    }
+  });
+}
+//
+public interface EventHandler<T extends Event>{
+  void handle(T event);
+}
+//
+class ButtonHandler implements
+  EventHandler<ActionEvent>{
+  public void handle(ActionEvent evt){
+
+    
+  }
+  }
+
+//
+button.addEventHanbler(
+  ActionEvent.ALL, new ButtonHandler())
+
+
+  button.setOnAction(new ButtonHandler())
+
+  //
+  submitButton.setAction(new EventHandler<ActionEvent>(){
+  @Override
+  public void handle(ActionEvent actionEvent){
+  }
+});
+
+//
+submitButton.setOnAction(event->{
+
+  String firstname = firstnameField.getText();
+  String lastname = lastnameField.getText();
+  String email = emailTextField.getText();
+  out.println(new Student(firstname, lastname, email));
+}
+  
+});
+
+//Collections and Generics
+
+Array list1 = new ArrayList();
+
+for(Object o : list1){
+  System.out.println(o);
+  
+}
+ArrayList<Person> list2 = new ArrayList<>();
+
+for(Person p : list2){
+  System.out.println(p);
+}
+//
+public interface Iterator{
+  boolean hasNext(){
+    Object next();
+    void remove();
+    
+  }
+
+  public interface Iterator<E>
+    {
+      boolean hasNext();
+      E next();
+      void remove();
+    
+}
+
+  //
+  ArrayList list1 = new ArrayList();
+
+  Iterator it1 = list1.iterator();
+  while(it1.hasNext()){
+  System.out.println(it1.next());
+}
+
+ArrayList<Person> list2 = new ArrayList<>();
+
+Iterator<Person> it2 = list2.iterator();
+while(it2.hasNext()){
+  System.out.println(it2.next());
+}
+//
+
+List<String> fruits = new ArrayList<>(
+  Arrays.asList("apple", "pear", "grapes", "strawberry"));
+fruits.forEach(e->System.out.println(e));
+
+//
+TreeSet<String> dict = new TreeSet<>();
+Scanner scanner = new Scanner(new File("dict.txt"));
+while(scanner.hasNext()){
+  dict.add(scanner.next());
+  
+}
+System.out.println("SIZE : " + dict.size() );
+long counter = dict.stream().filter(e->e.startsWith("the"))
+  .count();
+System.out.println("#words: "+counter);
+
+//
+
+TreeSet<String> set = new TreeSet<>();
+
+TreeSet<String> set = new TreeSet<>(
+  new Comparator<String>(){
+
+    @Override
+    public int compare(String o1, String o2){
+      return o2.compareTo(o1);
+    }
+  });
+rev.addAll(set);
+
+//
+public class MyClass implements Comparable<Point>{
+  public static final Point origin = new Point(0,0);
+
+  private final int x,y;
+
+  public String toString(){//}
+    public boolean equals(Object o){}
+      public double distanceTo(Point point){}
+
+  @Override
+  public int compareTo(Point o){
+    return 
+      Double.compare(this.distanceTo(origin),o.distanceTo(origin));
+  }
+
+}
+TreeSet<Point> points1 = new TreeSet<>();
+
+ArrayList<Point> points2 = new ArrayList<>();
+Collections.sort(points2);
+
+//
+
+public class Point implements
+  Comparable<Point>
+
+  @Override
+  public int compareTo(Point o){
+  if(o == null)throw
+    new NullPointerException();
+  if(this.x == o.x && 
+    this.y == o.y){
+    return 0;
+  }
+  if(this.x == o.x){
+    return 
+      Integer.compare(this.y, o.y);
+    
+  }else
+  {
+    Integer.compare(this.x, o.x);
+  }
+}
+
+  }
+
+//
+public class RandomPoints{
+  private TreeSet<Point> points = 
+  new TreeSet<Point>();
+
+  private int duplicates = 0;
+
+public RandomPoints(int size,
+                   int interval){
+  int counter = 0;
+  Random rand =new Random(0);
+  while(counter < size){
+    int x =
+      Math.abs(rand.nextInt()) % interval);
+    int y =
+      Math.abs(rand.nextInt()) % interval);
+    Point p = new Point(x,y);
+    if(points.contains(p)){
+      ++duplicates;
+      continue;
+    }
+  ++counter;
+    points.add(p);
+  }
+}
+
+}
+
+//oop_java 336P 
+public 
